@@ -233,7 +233,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{{ route('post.create') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Добавить статью</p>
                 </a>
@@ -343,6 +343,7 @@
 <script src="/admin/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/admin/dist/js/pages/dashboard.js"></script>
+<script src="https://cdn.tiny.cloud/1/oct5snef4101qk2ces0mp03fhh1fc2liksdkoobfzuyb3may/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script src="/admin/admin.js"></script>
 </body>
 </html>
