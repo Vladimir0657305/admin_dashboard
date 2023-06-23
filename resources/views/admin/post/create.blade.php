@@ -50,6 +50,12 @@
                                         Введите текст поста.
                                     </textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="feature_image">Feature Image</label>
+                                    <img src="" alt="" class="img-uploaded" style="display: block; max-width: 300px;">
+                                    <input type="text" class="form-control" id="feature_image" name="feature_image" value="" readonly>
+                                    <a href="" class="popup_selector btn btn-primary mt-1" data-inputid="feature_image">Select Image</a>
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Добавить</button>
