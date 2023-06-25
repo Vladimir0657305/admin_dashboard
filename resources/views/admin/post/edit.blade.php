@@ -1,5 +1,5 @@
 @extends('layouts.admin_layouts')
-@section('title', 'Добавить статью')
+@section('title', 'Редактировать статью')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Добавить статью</h1>
+                    <h1 class="m-0">Редактировать статью: {{ $post->title}}</h1>
                 </div><!-- /.col -->
                 @if (session('success'))
                     <div class="alert alert-success col-lg-12" role="alert">
@@ -26,13 +26,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card card-primary">
-                        <form action="{{ route('post.store') }}" method="POST">
+                        <form action="{{ route('post.update', $post->id) }}" method="POST">
                             @csrf
+                            @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Название</label>
                                     <input type="text" class="form-control" name="title" id="exampleInputEmail1"
-                                        placeholder="Введите название статьи" required>
+                                        placeholder="Введите название статьи" value="{{ $post->title}}" required>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-6 col-lg-12">
@@ -40,26 +41,29 @@
                                         <label>Выберите категорию</label>
                                         <select name="cat_id" class="form-control" >
                                             @foreach ($categories as $category)
-                                                <option value="{{ $category['id'] }}">{{ $category['title'] }}</option>
+                                                <option value="{{ $category['id'] }}"
+                                                @if($category->id == $post->id) selected
+                                                @endif>
+                                                {{ $category['title'] }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea class="editor" name="text"></textarea>
+                                    <textarea class="editor" name="text">{{ $post->text }}</textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="feature_image">Feature Image</label>
-                                    <img src="" alt="" class="img-uploaded" style="display: block; max-width: 300px;">
-                                    <input type="text" class="form-control" id="feature_image" name="feature_image" value="" readonly>
+                                    <img src="{{ $post->img }}" alt="" class="img-uploaded" style="display: block; max-width: 300px;">
+                                    <input type="text" class="form-control" id="feature_image" name="feature_image" value="{{ $post->img }}" readonly>
                                     <a href="" class="popup_selector btn btn-primary mt-1" data-inputid="feature_image">Select Image</a>
                                 </div>
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Добавить</button>
+                                <button type="submit" class="btn btn-primary">Сохранить</button>
                             </div>
                         </form>
                     </div>
