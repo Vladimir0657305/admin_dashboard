@@ -38,7 +38,7 @@
 
             {{-- Form input category name start --}}
             <div class="card card-primary">
-                <form action="{{ route('category.store') }}" method="POST">
+                <form action="{{ route('post.store') }}" method="POST">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -57,7 +57,16 @@
                         </div>
 
                         <div class="form-group">
-                            <div id="editor" name="text"></div>
+                            <textarea id ="editor" name="text"></textarea>
+                            {{-- <input type="text" id="editor" name="text"> --}}
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="feature_image">Выберите изображение</label>
+                            <img src="@img" class="img-uploaded" alt="" style="display:block; width: 300px;">
+                            <input type="text" class="form-control readonly" id="feature_image" name="feature_image" value="">
+                            <button href="" class="popup_selector btn btn-primary mt-2" data-inputid="feature_image"> Select Image </button>
                         </div>
 
                     </div>
@@ -489,5 +498,5 @@
 
 
 
-    
+
 @endsection

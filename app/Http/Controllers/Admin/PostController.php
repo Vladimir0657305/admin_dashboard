@@ -14,7 +14,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        return view('admin.post.index', [
+            'posts' => $posts
+        ]);
     }
 
     /**
@@ -33,7 +36,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post();
+        $post->title = $request->title;
+        $post->img = $request->feature_image;
+        $post->text = $request->text;
+        $post->cat_id = $request->cat_id;
+        $post->save();
+        return redirect()->back()->withSuccess('Статья была успешно добавлена!');
     }
 
     /**

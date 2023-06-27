@@ -21,6 +21,7 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="/admin/dist/assets/css/style.css">
+    <link rel="stylesheet" href="/admin/dist/assets/css/colorbox.css">
 
 </head>
 
@@ -346,8 +347,10 @@
 
     <script src="/admin/dist/assets/js/vendor-all.min.js"></script>
     <script src="/admin/dist/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="/admin/dist/assets/js/plugins/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="/packages/barryvdh/elfinder/js/standalonepopup.js"></script>
     <script src="/admin/dist/assets/js/pcoded.min.js"></script>
-    <script src="/admin/dist/assets/js/admin.js"></script>
+    {{-- <script src="/admin/dist/assets/js/admin.js"></script> --}}
 
     <!-- Apex Chart -->
     <script src="/admin/dist/assets/js/plugins/apexcharts.min.js"></script>
