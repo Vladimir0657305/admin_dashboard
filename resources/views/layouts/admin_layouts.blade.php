@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-    <title>Flat Able - Premium Admin Template by Phoenixcoded</title>
+    <title>Панель администратора: @yield('title')</title>
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
@@ -15,13 +15,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="" />
     <meta name="keywords" content="">
-    <meta name="author" content="Phoenixcoded" />
+    <meta name="author" content="" />
     <!-- Favicon icon -->
     <link rel="icon" href="/admin_dashboard/public/admin/dist/assets/images/favicon.ico" type="image/x-icon">
 
     <!-- vendor css -->
-    <link rel="stylesheet" href="admin/dist/assets/css/style.css">
-
+    <link rel="stylesheet" href="/admin/dist/assets/css/style.css">
+<script src="/admin_dashboard/public/admin/assets/vendor/ckeditor.js"></script>
 
 
 </head>
@@ -41,10 +41,10 @@
 
                 <div class="">
                     <div class="main-menu-header">
-                        <img class="img-radius" src="admin/dist/assets/images/user/avatar-2.jpg"
+                        <img class="img-radius" src="/admin/dist/assets/images/user/avatar-2.jpg"
                             alt="User-Profile-Image">
                         <div class="user-details">
-                            <span>John Doe</span>
+                            <span>{{ Auth::user()->name}}</span>
                             <div id="more-details">UX Designer<i class="fa fa-chevron-down m-l-5"></i></div>
                         </div>
                     </div>
@@ -70,11 +70,18 @@
                     </li>
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Page
-                                layouts</span></a>
+                                    class="feather icon-file-text"></i></span><span class="pcoded-mtext">Статьи</span></a>
                         <ul class="pcoded-submenu">
-                            <li><a href="layout-vertical.html" target="_blank">Vertical</a></li>
-                            <li><a href="layout-horizontal.html" target="_blank">Horizontal</a></li>
+                            <li><a href="{{ route('post.index') }}" >Все статьи</a></li>
+                            <li><a href="{{ route('post.create') }}" >Добавить статью</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-align-left"></i></span><span class="pcoded-mtext">Категории</span></a>
+                        <ul class="pcoded-submenu">
+                            <li><a href="{{ route('category.index') }}" >Все категории</a></li>
+                            <li><a href="{{ route('category.create') }}" >Добавить категорию</a></li>
                         </ul>
                     </li>
                     <li class="nav-item pcoded-menu-caption">
@@ -246,58 +253,7 @@
                                     <a href="#!">clear all</a>
                                 </div>
                             </div>
-                            <ul class="noti-body">
-                                <li class="n-title">
-                                    <p class="m-b-0">NEW</p>
-                                </li>
-                                <li class="notification">
-                                    <div class="media">
-                                        <img class="img-radius" src="admin/dist/assets/images/user/avatar-1.jpg"
-                                            alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p><strong>John Doe</strong><span class="n-time text-muted"><i
-                                                        class="icon feather icon-clock m-r-10"></i>5 min</span></p>
-                                            <p>New ticket Added</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="n-title">
-                                    <p class="m-b-0">EARLIER</p>
-                                </li>
-                                <li class="notification">
-                                    <div class="media">
-                                        <img class="img-radius" src="admin/dist/assets/images/user/avatar-2.jpg"
-                                            alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p><strong>Joseph William</strong><span class="n-time text-muted"><i
-                                                        class="icon feather icon-clock m-r-10"></i>10 min</span></p>
-                                            <p>Prchace New Theme and make payment</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="notification">
-                                    <div class="media">
-                                        <img class="img-radius" src="admin/dist/assets/images/user/avatar-1.jpg"
-                                            alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p><strong>Sara Soudein</strong><span class="n-time text-muted"><i
-                                                        class="icon feather icon-clock m-r-10"></i>12 min</span></p>
-                                            <p>currently login</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="notification">
-                                    <div class="media">
-                                        <img class="img-radius" src="admin/dist/assets/images/user/avatar-2.jpg"
-                                            alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <p><strong>Joseph William</strong><span class="n-time text-muted"><i
-                                                        class="icon feather icon-clock m-r-10"></i>30 min</span></p>
-                                            <p>Prchace New Theme and make payment</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                            
                             <div class="noti-footer">
                                 <a href="#!">show all</a>
                             </div>
@@ -311,7 +267,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-notification">
                             <div class="pro-head">
-                                <img src="admin/dist/assets/images/user/avatar-1.jpg" class="img-radius"
+                                <img src="/admin/dist/assets/images/user/avatar-1.jpg" class="img-radius"
                                     alt="User-Profile-Image">
                                 <span>John Doe</span>
                                 <a href="auth-signin.html" class="dud-logout" title="Logout">
@@ -338,8 +294,6 @@
 
 @yield('content')
 
-    
-    
     <!-- Warning Section start -->
     <!-- Older IE warning message -->
     <!--[if lt IE 11]>
@@ -388,16 +342,23 @@
     <!-- Warning Section Ends -->
 
     <!-- Required Js -->
-    <script src="admin/dist/assets/js/vendor-all.min.js"></script>
-    <script src="admin/dist/assets/js/plugins/bootstrap.min.js"></script>
-    <script src="admin/dist/assets/js/pcoded.min.js"></script>
+    {{-- <script src="../../../public/admin/js/vendor-all.min.js"></script>
+    <script src="../../../public/admin/js/plugins/bootstrap.min.js"></script>
+    <script src="../../../public/admin/js/pcoded.min.js"></script> --}}
+
+    <script src="/admin/dist/assets/js/vendor-all.min.js"></script>
+    <script src="/admin/dist/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="/admin/dist/assets/js/pcoded.min.js"></script>
 
     <!-- Apex Chart -->
-    <script src="admin/dist/assets/js/plugins/apexcharts.min.js"></script>
+    <script src="/admin/dist/assets/js/plugins/apexcharts.min.js"></script>
 
 
     <!-- custom-chart js -->
-    <script src="admin/dist/assets/js/pages/dashboard-main.js"></script>
+    <script src="/admin/dist/assets/js/pages/dashboard-main.js"></script>
+    
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/decoupled-document/ckeditor.js"></script> --}}
+
 </body>
 
 </html>

@@ -14,8 +14,8 @@
                                 <h5 class="m-b-10">Dashboard Analytics</h5>
                             </div>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#!">Dashboard Analytics</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('home_admin') }}"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('home_admin') }}">Dashboard Analytics</a></li>
                             </ul>
                         </div>
                     </div>
@@ -33,9 +33,8 @@
                                 <h3>{{ $post_count }}</h3>
                                 <p>Посты</p>
                             </div>
-                            <div class="text-center mr-2 mt-3 mb-2">
-                                <i class="icon feather icon-file-text text-c-red mb-1 d-block"
-                                    style="font-size: 120px;"></i>
+                            <div class="text-center ">
+                                <i class="icon feather icon-file-text text-c-red mb-1 d-block custom_icon_card mr-4 mt-4 mb-4"></i>
                             </div>
                         </div>
 
@@ -52,9 +51,9 @@
                                 <h3>{{ $categories_count }}</h3>
                                 <p>Категории</p>
                             </div>
-                            <div class="text-center mr-2 mt-3 mb-2">
-                                <i class="icon feather icon-align-left text-c-yellow mb-1 d-block"
-                                    style="font-size: 120px; color: #61179E;"></i>
+                            <div class="text-center mr-4 mt-3 mb-2">
+                                <i class="icon feather icon-align-left text-c-yellow mb-1 d-block custom_icon_card mr-4 mt-3 mb-2"
+                                    style=" color: #61179E;"></i>
                             </div>
                         </div>
 
@@ -71,13 +70,13 @@
                                 <h3>4</h3>
                                 <p>Пользователи</p>
                             </div>
-                            <div class="text-center mr-2 mt-3 mb-2">
-                                <i class="icon feather icon-user text-c-red mb-1 d-block"
-                                    style="font-size: 120px; color: #C0DE5D"></i>
+                            <div class="text-center ">
+                                <i class="icon feather icon-user text-c-red mb-1 d-block custom_icon_card mr-4 mt-4 mb-4"
+                                    style="color: #C0DE5D"></i>
                             </div>
                         </div>
 
-                        <a href="#" class="small-box-footer w-100">Все посты <i
+                        <a href="#" class="small-box-footer w-100">Все пользователи <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
