@@ -21,8 +21,6 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="/admin/dist/assets/css/style.css">
-<script src="/admin_dashboard/public/admin/assets/vendor/ckeditor.js"></script>
-
 
 </head>
 
@@ -349,6 +347,7 @@
     <script src="/admin/dist/assets/js/vendor-all.min.js"></script>
     <script src="/admin/dist/assets/js/plugins/bootstrap.min.js"></script>
     <script src="/admin/dist/assets/js/pcoded.min.js"></script>
+    <script src="/admin/dist/assets/js/admin.js"></script>
 
     <!-- Apex Chart -->
     <script src="/admin/dist/assets/js/plugins/apexcharts.min.js"></script>
@@ -356,9 +355,15 @@
 
     <!-- custom-chart js -->
     <script src="/admin/dist/assets/js/pages/dashboard-main.js"></script>
-    
-    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/decoupled-document/ckeditor.js"></script> --}}
+    {{-- <script src="../../../public/admin/admin.js"></script>
+    <script src="/admin_dashboard/public/admin/admin.js"></script> --}}
+    <script src="/admin/admin.js"></script>
 
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/decoupled-document/ckeditor.js"></script> --}}
+    {{-- <script src="/admin_dashboard/public/admin/assets/vendor/ckeditor.js"></script> --}}
+    {{-- <script src="/admin_dashboard/public/assets/vendor/build/ckeditor.js"></script> --}}
+    
+    
 </body>
 
 </html>
