@@ -365,7 +365,7 @@
     {{-- <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/decoupled-document/ckeditor.js"></script> --}}
     {{-- <script src="/admin_dashboard/public/admin/assets/vendor/ckeditor.js"></script> --}}
     {{-- <script src="/admin_dashboard/public/assets/vendor/build/ckeditor.js"></script> --}}
-    
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/super-build/ckeditor.js"></script>
     
 </body>
 

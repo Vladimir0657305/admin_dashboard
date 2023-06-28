@@ -42,7 +42,7 @@
                                             <th>ID</th>
                                             <th>Название</th>
                                             <th>Категория</th>
-                                            <th>Текст</th>
+                                            {{-- <th>Текст</th> --}}
                                             <th>Дата создания</th>
                                             <th></th>
                                         </tr>
@@ -53,7 +53,7 @@
                                                 <td>{{ $post->id }}</td>
                                                 <td>{{ $post->title }}</td>
                                                 <td>{{ $post->category->title }}</td>
-                                                <td>{{ $post->text }}</td>
+                                                {{-- <td>{{ $post->text }}</td> --}}
                                                 <td>{{ $post->created_at }}</td>
                                                 <td >
                                                     <a class="btn btn-info btn-sm mr-1"
