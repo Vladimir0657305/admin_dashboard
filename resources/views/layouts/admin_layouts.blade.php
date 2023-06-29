@@ -43,19 +43,8 @@
                         <img class="img-radius" src="/admin/dist/assets/images/user/avatar-2.jpg"
                             alt="User-Profile-Image">
                         <div class="user-details">
-                            <span>{{ Auth::user()->name}}</span>
-                            <div id="more-details">UX Designer<i class="fa fa-chevron-down m-l-5"></i></div>
+                            <span>{{ Auth::user()->name }}</span>
                         </div>
-                    </div>
-                    <div class="collapse" id="nav-user-link">
-                        <ul class="list-unstyled">
-                            <li class="list-group-item"><a href="user-profile.html"><i
-                                        class="feather icon-user m-r-5"></i>View Profile</a></li>
-                            <li class="list-group-item"><a href="#!"><i
-                                        class="feather icon-settings m-r-5"></i>Settings</a></li>
-                            <li class="list-group-item"><a href="auth-normal-sign-in.html"><i
-                                        class="feather icon-log-out m-r-5"></i>Logout</a></li>
-                        </ul>
                     </div>
                 </div>
 
@@ -69,18 +58,20 @@
                     </li>
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-file-text"></i></span><span class="pcoded-mtext">Статьи</span></a>
+                                    class="feather icon-file-text"></i></span><span
+                                class="pcoded-mtext">Статьи</span></a>
                         <ul class="pcoded-submenu">
-                            <li><a href="{{ route('post.index') }}" >Все статьи</a></li>
-                            <li><a href="{{ route('post.create') }}" >Добавить статью</a></li>
+                            <li><a href="{{ route('post.index') }}">Все статьи</a></li>
+                            <li><a href="{{ route('post.create') }}">Добавить статью</a></li>
                         </ul>
                     </li>
                     <li class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link "><span class="pcoded-micon"><i
-                                    class="feather icon-align-left"></i></span><span class="pcoded-mtext">Категории</span></a>
+                                    class="feather icon-align-left"></i></span><span
+                                class="pcoded-mtext">Категории</span></a>
                         <ul class="pcoded-submenu">
-                            <li><a href="{{ route('category.index') }}" >Все категории</a></li>
-                            <li><a href="{{ route('category.create') }}" >Добавить категорию</a></li>
+                            <li><a href="{{ route('category.index') }}">Все категории</a></li>
+                            <li><a href="{{ route('category.create') }}">Добавить категорию</a></li>
                         </ul>
                     </li>
                     <li class="nav-item pcoded-menu-caption">
@@ -108,11 +99,11 @@
                             <li><a href="bc_extra.html">Other</a></li>
                         </ul>
                     </li>
-                    
+
 
                 </ul>
 
-                
+
 
             </div>
         </div>
@@ -252,7 +243,7 @@
                                     <a href="#!">clear all</a>
                                 </div>
                             </div>
-                            
+
                             <div class="noti-footer">
                                 <a href="#!">show all</a>
                             </div>
@@ -266,20 +257,22 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-notification">
                             <div class="pro-head">
-                                <img src="/admin/dist/assets/images/user/avatar-1.jpg" class="img-radius"
+                                <img src="/admin/dist/assets/images/user/avatar-2.jpg" class="img-radius"
                                     alt="User-Profile-Image">
-                                <span>John Doe</span>
-                                <a href="auth-signin.html" class="dud-logout" title="Logout">
-                                    <i class="feather icon-log-out"></i>
-                                </a>
+                                <span>{{ Auth::user()->name }}</span>
                             </div>
                             <ul class="pro-body">
-                                <li><a href="user-profile.html" class="dropdown-item"><i
-                                            class="feather icon-user"></i> Profile</a></li>
-                                <li><a href="email_inbox.html" class="dropdown-item"><i
-                                            class="feather icon-mail"></i> My Messages</a></li>
-                                <li><a href="auth-signin.html" class="dropdown-item"><i
-                                            class="feather icon-lock"></i> Lock Screen</a></li>
+                                <li class="list-group-item"><a href="{{ route('main') }}"><i
+                                            class="feather icon-user m-r-5"></i>View Profile</a></li>
+                                <li class="list-group-item"><a href="#!"><i
+                                            class="feather icon-settings m-r-5"></i>Settings</a></li>
+                                <li class="list-group-item custom_li_logout">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-link custom_btn_logout">
+                                            <i class="feather icon-log-out m-r-5"></i>Logout</button>
+                                    </form>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -291,7 +284,7 @@
     </header>
     <!-- [ Header ] end -->
 
-@yield('content')
+    @yield('content')
 
     <!-- Warning Section start -->
     <!-- Older IE warning message -->
@@ -366,7 +359,7 @@
     {{-- <script src="/admin_dashboard/public/admin/assets/vendor/ckeditor.js"></script> --}}
     {{-- <script src="/admin_dashboard/public/assets/vendor/build/ckeditor.js"></script> --}}
     <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/super-build/ckeditor.js"></script>
-    
+
 </body>
 
 </html>

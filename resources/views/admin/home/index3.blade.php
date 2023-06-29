@@ -2,93 +2,321 @@
 @section('title', 'Главная')
 
 @section('content')
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Главная</h1>
-                </div><!-- /.col -->
-
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            <!-- Small boxes (Stat box) -->
-            <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <h3>{{ $post_count }}</h3>
-
-                            <p>Посты</p>
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">Dashboard Analytics</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{{ route('home_admin') }}"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('home_admin') }}">Dashboard Analytics</a></li>
+                            </ul>
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-clipboard"></i>
-
-                        </div>
-                        <a href="{{ route('post.index') }}" class="small-box-footer">Все посты <i
-                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>{{ $categories_count }}</h3>
-
-                            <p>Категории</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars" style="transform: rotate(90deg);"></i>
-                        </div>
-                        <a href="{{ route('category.index') }}" class="small-box-footer">Все категории <i
-                                class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h3>44</h3>
-
-                            <p>User Registrations</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>65</h3>
-
-                            <p>Unique Visitors</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
             </div>
-            <!-- /.row -->
-            <!-- Main row -->
+            <!-- [ breadcrumb ] end -->
+            <!-- [ Main Content ] start -->
+            <div class="row">
 
-            <!-- /.row (main row) -->
-        </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+                <div class="col-lg-4 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning d-flex flex-column  justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="inner ml-2 ">
+                                <h3>{{ $post_count }}</h3>
+                                <p>Посты</p>
+                            </div>
+                            <div class="text-center ">
+                                <i class="icon feather icon-file-text text-c-red mb-1 d-block custom_icon_card mr-4 mt-4 mb-4"></i>
+                            </div>
+                        </div>
+
+                        <a href="#" class="small-box-footer w-100">Все посты <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success d-flex flex-column  justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="inner ml-2 ">
+                                <h3>{{ $categories_count }}</h3>
+                                <p>Категории</p>
+                            </div>
+                            <div class="text-center mr-4 mt-3 mb-2">
+                                <i class="icon feather icon-align-left text-c-yellow mb-1 d-block custom_icon_card mr-4 mt-3 mb-2"
+                                    style=" color: #61179E;"></i>
+                            </div>
+                        </div>
+
+                        <a href="#" class="small-box-footer w-100">Все категории <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info d-flex flex-column  justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="inner ml-2 ">
+                                <h3>4</h3>
+                                <p>Пользователи</p>
+                            </div>
+                            <div class="text-center ">
+                                <i class="icon feather icon-user text-c-red mb-1 d-block custom_icon_card mr-4 mt-4 mb-4"
+                                    style="color: #C0DE5D"></i>
+                            </div>
+                        </div>
+
+                        <a href="#" class="small-box-footer w-100">Все пользователи <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- table card-1 start -->
+                <div class="col-md-12 col-xl-4">
+                    <div class="card flat-card">
+                        <div class="row-table">
+                            <div class="col-sm-6  card-body br">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <i class="icon feather icon-file-text text-c-red mb-1 d-block"></i>
+                                    </div>
+                                    <div class="col-sm-8 text-md-center">
+                                        <h3>Посты</h3>
+                                        <h3>{{ $post_count }}</h3>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 card-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <i class="icon feather icon-music text-c-red mb-1 d-block"></i>
+                                    </div>
+                                    <div class="col-sm-8 text-md-center">
+                                        <h3>100%</h3>
+                                        <span>Volume</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-table">
+                            <div class="col-sm-6 card-body br">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <i class="icon feather icon-file-text text-c-blue mb-1 d-block"></i>
+                                    </div>
+                                    <div class="col-sm-8 text-md-center">
+                                        <h3>{{ $post_count }}</h3>
+                                        <h3>Посты</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 card-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <i class="icon feather icon-mail text-c-yellow mb-1 d-block"></i>
+                                    </div>
+                                    <div class="col-sm-8 text-md-center">
+                                        <h3>120</h3>
+                                        <span>Mails</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- widget primary card start -->
+                    <div class="card flat-card widget-primary-card">
+                        <div class="row-table">
+                            <div class="col-sm-3 card-body">
+                                <i class="feather icon-star-on"></i>
+                            </div>
+                            <div class="col-sm-9">
+                                <h4>4000 +</h4>
+                                <h6>Ratings Received</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- widget primary card end -->
+                </div>
+                <!-- table card-1 end -->
+                <!-- table card-2 start -->
+                <div class="col-md-12 col-xl-4">
+                    <div class="card flat-card">
+                        <div class="row-table">
+                            <div class="col-sm-6 card-body br">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <i class="icon feather icon-share-2 text-c-blue mb-1 d-block"></i>
+                                    </div>
+                                    <div class="col-sm-8 text-md-center">
+                                        <h5>1000</h5>
+                                        <span>Shares</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 card-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <i class="icon feather icon-wifi text-c-blue mb-1 d-block"></i>
+                                    </div>
+                                    <div class="col-sm-8 text-md-center">
+                                        <h5>600</h5>
+                                        <span>Network</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-table">
+                            <div class="col-sm-6 card-body br">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <i class="icon feather icon-rotate-ccw text-c-blue mb-1 d-block"></i>
+                                    </div>
+                                    <div class="col-sm-8 text-md-center">
+                                        <h5>3550</h5>
+                                        <span>Returns</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 card-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <i class="icon feather icon-shopping-cart text-c-blue mb-1 d-blockz"></i>
+                                    </div>
+                                    <div class="col-sm-8 text-md-center">
+                                        <h5>100%</h5>
+                                        <span>Order</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- widget-success-card start -->
+                    <div class="card flat-card widget-purple-card">
+                        <div class="row-table">
+                            <div class="col-sm-3 card-body">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="col-sm-9">
+                                <h4>17</h4>
+                                <h6>Achievements</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- widget-success-card end -->
+                </div>
+                <!-- table card-2 end -->
+                <!-- Widget primary-success card start -->
+                <div class="col-md-12 col-xl-4">
+                    <div class="card support-bar overflow-hidden">
+                        <div class="card-body pb-0">
+                            <h2 class="m-0">350</h2>
+                            <span class="text-c-blue">Support Requests</span>
+                            <p class="mb-3 mt-3">Total number of support requests that come in.</p>
+                        </div>
+                        <div id="support-chart"></div>
+                        <div class="card-footer bg-primary text-white">
+                            <div class="row text-center">
+                                <div class="col">
+                                    <h4 class="m-0 text-white">10</h4>
+                                    <span>Open</span>
+                                </div>
+                                <div class="col">
+                                    <h4 class="m-0 text-white">5</h4>
+                                    <span>Running</span>
+                                </div>
+                                <div class="col">
+                                    <h4 class="m-0 text-white">3</h4>
+                                    <span>Solved</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Widget primary-success card end -->
+
+
+
+                <!-- prject ,team member start -->
+                <!-- seo start -->
+                <div class="col-xl-4 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <h3>$16,756</h3>
+                                    <h6 class="text-muted m-b-0">Visits<i class="fa fa-caret-down text-c-red m-l-10"></i>
+                                    </h6>
+                                </div>
+                                <div class="col-6">
+                                    <div id="seo-chart1" class="d-flex align-items-end"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <h3>49.54%</h3>
+                                    <h6 class="text-muted m-b-0">Bounce Rate<i
+                                            class="fa fa-caret-up text-c-green m-l-10"></i></h6>
+                                </div>
+                                <div class="col-6">
+                                    <div id="seo-chart2" class="d-flex align-items-end"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-6">
+                                    <h3>1,62,564</h3>
+                                    <h6 class="text-muted m-b-0">Products<i
+                                            class="fa fa-caret-down text-c-red m-l-10"></i></h6>
+                                </div>
+                                <div class="col-6">
+                                    <div id="seo-chart3" class="d-flex align-items-end"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- seo end -->
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!-- [ Main Content ] end -->
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
 @endsection

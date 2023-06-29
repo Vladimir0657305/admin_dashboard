@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\MainAdminController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\BlogsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,14 @@ use App\Http\Controllers\Admin\PostController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', function() {
+    return view('home');
+})->name('home');
+// Route::get('/', function() {
+//     return view('blogs.main.index');
+// })->name('main');
+Route::get('/', [BlogsController::class, 'main'])->name('main');
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group( function() {
     Route::get('/', [MainAdminController::class, 'index'])->name('home_admin');

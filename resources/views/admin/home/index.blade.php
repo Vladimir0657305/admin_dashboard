@@ -14,7 +14,8 @@
                                 <h5 class="m-b-10">Dashboard Analytics</h5>
                             </div>
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('home_admin') }}"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('home_admin') }}"><i
+                                            class="feather icon-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="{{ route('home_admin') }}">Dashboard Analytics</a></li>
                             </ul>
                         </div>
@@ -34,7 +35,8 @@
                                 <p>Посты</p>
                             </div>
                             <div class="text-center ">
-                                <i class="icon feather icon-file-text text-c-red mb-1 d-block custom_icon_card mr-4 mt-4 mb-4"></i>
+                                <i
+                                    class="icon feather icon-file-text text-c-red mb-1 d-block custom_icon_card mr-4 mt-4 mb-4"></i>
                             </div>
                         </div>
 
@@ -299,20 +301,6 @@
                     </div>
                 </div>
                 <!-- seo end -->
-
-
-
-
-                
-
-
-
-
-
-
-
-
-
 
             </div>
             <!-- [ Main Content ] end -->
