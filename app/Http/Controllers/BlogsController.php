@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
 
 class BlogsController extends Controller
@@ -22,8 +23,9 @@ class BlogsController extends Controller
     }
     public function blog_category_01()
     {
+        Paginator::useBootstrapFour();
         $categories = Category::get();
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::where('cat_id', 1)->orderBy('created_at', 'desc')->paginate(5);
         $categories_count = Category::withCount('posts')->get();
 
         return view('blogs.blogCategory01', [
@@ -34,11 +36,64 @@ class BlogsController extends Controller
     }
     public function blog_category_02()
     {
+        Paginator::useBootstrapFour();
         $categories = Category::get();
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::where('cat_id', 2)->orderBy('created_at', 'desc')->paginate(5);
         $categories_count = Category::withCount('posts')->get();
 
         return view('blogs.blogCategory02', [
+            'posts' => $posts,
+            'categories' => $categories,
+            'categories_count' => $categories_count
+        ]);
+    }
+    public function blog_category_03()
+    {
+        Paginator::useBootstrapFour();
+        $categories = Category::get();
+        $posts = Post::where('cat_id', 3)->orderBy('created_at', 'desc')->paginate(5);
+        $categories_count = Category::withCount('posts')->get();
+
+        return view('blogs.blogCategory03', [
+            'posts' => $posts,
+            'categories' => $categories,
+            'categories_count' => $categories_count
+        ]);
+    }
+    public function blog_category_04()
+    {
+        Paginator::useBootstrapFour();
+        $categories = Category::get();
+        $posts = Post::where('cat_id', 4)->orderBy('created_at', 'desc')->paginate(5);
+        $categories_count = Category::withCount('posts')->get();
+
+        return view('blogs.blogCategory04', [
+            'posts' => $posts,
+            'categories' => $categories,
+            'categories_count' => $categories_count
+        ]);
+    }
+    public function blog_category_05()
+    {
+        Paginator::useBootstrapFour();
+        $categories = Category::get();
+        $posts = Post::where('cat_id', 5)->orderBy('created_at', 'desc')->paginate(5);
+        $categories_count = Category::withCount('posts')->get();
+
+        return view('blogs.blogCategory05', [
+            'posts' => $posts,
+            'categories' => $categories,
+            'categories_count' => $categories_count
+        ]);
+    }
+    public function blog_category_06()
+    {
+        Paginator::useBootstrapFour();
+        $categories = Category::get();
+        $posts = Post::where('cat_id', 6)->orderBy('created_at', 'desc')->paginate(9);
+        $categories_count = Category::withCount('posts')->get();
+
+        return view('blogs.blogCategory06', [
             'posts' => $posts,
             'categories' => $categories,
             'categories_count' => $categories_count

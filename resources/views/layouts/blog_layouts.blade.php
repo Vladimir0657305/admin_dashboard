@@ -362,16 +362,16 @@
                             <a class="nav-link color-red-hover" href="{{ route('blog-category-02') }}">Рецепты</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link color-aqua-hover" href="blog-category-03.html">Природа</a>
+                            <a class="nav-link color-aqua-hover" href="{{ route('blog-category-03') }}">Путешествия</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link color-green-hover" href="blog-category-04.html">Путешествия</a>
+                            <a class="nav-link color-green-hover" href="{{ route('blog-category-04') }}">Дизайн</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link color-yellow-hover" href="blog-category-05.html"> Дизайн</a>
+                            <a class="nav-link color-yellow-hover" href="{{ route('blog-category-05') }}"> Лайфстайл</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link color-grey-hover" href="blog-category-05.html"> Лайфстайл</a>
+                            <a class="nav-link color-grey-hover" href="{{ route('blog-category-06') }}"> Природа</a>
                         </li>
                     </ul>
                 </div>
