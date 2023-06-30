@@ -28,6 +28,11 @@ Route::get('/home', function() {
 // Route::get('/', function() {
 //     return view('blogs.main.index');
 // })->name('main');
+
+
+Route::get('/single_post/{postId}', [BlogsController::class, 'singlePost'])->name('single_post');
+Route::get('/blog-category-01', [BlogsController::class, 'blog_category_01'])->name('blog-category-01');
+Route::get('/blog-category-02', [BlogsController::class, 'blog_category_02'])->name('blog-category-02');
 Route::get('/', [BlogsController::class, 'main'])->name('main');
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group( function() {

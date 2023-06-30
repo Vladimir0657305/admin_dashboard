@@ -5,7 +5,6 @@
 
     {{-- SECTION CONTENT START ------------------------------------------------------------------------------------ --}}
     {{-- SECTION 1 START 5 POST ------------------------------------------------------------------------------------ --}}
-
     <section class="section first-section">
         <div class="container-fluid">
             <div class="masonry-blog clearfix">
@@ -19,10 +18,12 @@
                                 <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
-                                            <span class="bg-aqua"><a href="blog-category-01.html"
+                                            <span class=""
+                                                style=" background-color: {{ $post->category->category_color }}">
+                                                <a href="blog-category-01.html"
                                                     title="">{{ $post->category->title }}</a></span>
-                                            <h4><a href="single.html" title="">{{ $post->title }}</a></h4>
-                                            <small><a href="single.html" title="">24 July, 2017</a></small>
+                                            <h4><a href="{{ route('single_post', $post->id) }}" title="" data-postId="{{ $post->id }}">{{ $post->title }}</a></h4>
+                                            <small><a href="#" title="">{{ $post->created_at->format('d F, Y') }}</a></small>
                                             <small><a href="blog-author.html" title="">by Amanda</a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
@@ -37,10 +38,12 @@
                                 <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
-                                            <span class="bg-green"><a href="blog-category-01.html"
+                                            <span class=""
+                                                style=" background-color: {{ $post->category->category_color }}"><a
+                                                    href="blog-category-01.html"
                                                     title="">{{ $post->category->title }}</a></span>
-                                            <h4><a href="single.html" title="">{{ $post->title }}</a></h4>
-                                            <small><a href="single.html" title="">24 July, 2017</a></small>
+                                            <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a></h4>
+                                            <small><a href="" title="">{{ $post->created_at->format('d F, Y') }}</a></small>
                                             <small><a href="blog-author.html" title="">by Amanda</a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
@@ -53,9 +56,11 @@
                                 <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
-                                            <span class="bg-green"><a href="blog-category-01.html"
+                                            <span class=""
+                                                style=" background-color: {{ $post->category->category_color }}"><a
+                                                    href="blog-category-01.html"
                                                     title="">{{ $post->category->title }}</a></span>
-                                            <h4><a href="single.html" title="">{{ $post->title }}</a></h4>
+                                            <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a></h4>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
                                 </div><!-- end shadow -->
@@ -67,9 +72,11 @@
                                 <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
-                                            <span class="bg-green"><a href="blog-category-01.html"
+                                            <span class=""
+                                                style=" background-color: {{ $post->category->category_color }}"><a
+                                                    href="blog-category-01.html"
                                                     title="">{{ $post->category->title }}</a></span>
-                                            <h4><a href="single.html" title="">{{ $post->title }}</a></h4>
+                                            <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a></h4>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
                                 </div><!-- end shadow -->
@@ -82,10 +89,12 @@
                                 <div class="shadoweffect">
                                     <div class="shadow-desc">
                                         <div class="blog-meta">
-                                            <span class="bg-aqua"><a href="blog-category-01.html"
+                                            <span class=""
+                                                style=" background-color: {{ $post->category->category_color }}"><a
+                                                    href="blog-category-01.html"
                                                     title="">{{ $post->category->title }}</a></span>
-                                            <h4><a href="single.html" title="">{{ $post->title }}</a></h4>
-                                            <small><a href="single.html" title="">03 July, 2017</a></small>
+                                            <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a></h4>
+                                            <small><a href="" title="">{{ $post->created_at->format('d F, Y') }}</a></small>
                                             <small><a href="blog-author.html" title="">by Jessica</a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end shadow-desc -->
@@ -101,21 +110,26 @@
     {{-- SECTION 1 END  ------------------------------------------------------------------------------------ --}}
 
     {{-- SECTION 2 START 2 POSTS ------------------------------------------------------------------------------------ --}}
+    {{-- CATEGORY ID = 1 -> NEWS --}}
+    @php
+        $category_id_for_choice = 1;
+    @endphp
     <section class="section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    @foreach ($posts->skip(5)->take(2) as $key => $post)
-                        <div class="section-title">
-                            <h3 class="color-aqua"><a href="blog-category-01.html"
-                                    title="">{{ $post->category->title }}</a></h3>
-                        </div><!-- end title -->
 
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="section-title">
+                        <h3 class=""><a href="blog-category-01.html" title=""
+                                style="background-color: {{ $posts->where('cat_id', $category_id_for_choice)->first()->category->category_color }}">{{ $posts->where('cat_id', $category_id_for_choice)->first()->category->title }}</a>
+                        </h3>
+                    </div><!-- end title -->
+                    @foreach ($posts->where('cat_id', $category_id_for_choice)->take(2) as $post)
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="blog-box">
                                     <div class="post-media">
-                                        <a href="single.html" title="">
+                                        <a href="{{ route('single_post', $post->id) }}" title="">
                                             {{-- <img src="/storage/business-blog-politic-news-image-2.jpg" alt=""class="img-fluid"> --}}
                                             <img src="{{ $post->img }}" alt=""class="img-fluid">
                                             <div class="hovereffect">
@@ -124,12 +138,12 @@
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">{{ $post->title }}</a></h4>
+                                        <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a></h4>
                                         <p>{{ Str::limit(strip_tags($post->text), 160) }}</p>
                                         <a href="#">Read More </a> <br>
                                         <small><a href="blog-category-01.html"
                                                 title="">{{ $post->category->title }}</a></small>
-                                        <small><a href="single.html"
+                                        <small><a href=""
                                                 title="">{{ $post->created_at->format('d F, Y') }}</a></small>
                                         <small><a href="blog-author.html" title="">by Amanda</a></small>
                                     </div><!-- end meta -->
@@ -144,20 +158,25 @@
                 </div><!-- end col -->
                 {{-- SECTION 2 END ------------------------------------------------------------------------------------ --}}
 
-                {{-- SECTION 3 START ------------------------------------------------------------------------------------ --}}
+                {{-- SECTION 3 START 4 POSTS ------------------------------------------------------------------------------- --}}
+                {{-- CATEGORY ID = 6 -> LIFESTYLE --}}
+                @php
+                    $category_id_for_choice = 5;
+                @endphp
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="row">
 
-                        @foreach ($posts->skip(7)->take(4) as $post)
+                        @foreach ($posts->where('cat_id', $category_id_for_choice)->take(4) as $post)
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="blog-box">
                                     <div class="section-title">
-                                        <h3 class="color-pink"><a href="blog-category-01.html"
-                                                title="">{{ $post->category->title }}</a>
+                                        <h3 class=""><a href="blog-category-01.html"
+                                                style=" background-color: {{ $post->category->category_color }}"
+                                                title="">{{ $posts->where('cat_id', $category_id_for_choice)->first()->category->title }}</a>
                                         </h3>
                                     </div><!-- end title -->
                                     <div class="post-media">
-                                        <a href="single.html" title="">
+                                        <a href="{{ route('single_post', $post->id) }}" title="">
                                             <img src="{{ $post->img }}" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span></span>
@@ -165,10 +184,10 @@
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta">
-                                        <h4><a href="single.html" title="">{{ $post->title }}</a></h4>
+                                        <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a></h4>
                                         <small><a href="blog-category-01.html"
                                                 title="">{{ $post->category->title }}</a></small>
-                                        <small><a href="blog-category-01.html"
+                                        <small><a href=""
                                                 title="">{{ $post->created_at->format('d F, Y') }}</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
@@ -188,7 +207,7 @@
                 <div class="col-lg-10 offset-lg-1">
                     <div class="banner-spot clearfix">
                         <div class="banner-img">
-                            <img src="/storage/banner_01.jpg" alt="" class="img-fluid">
+                            <img src="/storage/00100-728x90.gif" alt="" class="img-fluid">
                         </div><!-- end banner-img -->
                     </div><!-- end banner -->
                 </div><!-- end col -->
@@ -197,20 +216,25 @@
             <hr class="invis1">
 
             {{-- SECTION 4 START 3 POSTS ------------------------------------------------------------------------------------ --}}
+            {{-- CATEGORY ID = 6 -> LIFESTYLE --}}
+            @php
+                $category_id_for_choice = 3;
+            @endphp
             <div class="row">
                 <div class="col-lg-9">
                     <div class="blog-list clearfix">
-                        @foreach ($posts->skip(11)->take(3) as $post)
+
+                        @foreach ($posts->where('cat_id', $category_id_for_choice)->take(3) as $post)
                             <div class="section-title">
-                                <h3 class="color-green"><a href="blog-category-01.html"
-                                        title="">{{ $post->category->title }}</a>
+                                <h3 class=""><a href="blog-category-01.html" title=""
+                                        style=" background-color: {{ $post->category->category_color }}">{{ $posts->where('cat_id', $category_id_for_choice)->first()->category->title }}</a>
                                 </h3>
                             </div><!-- end title -->
 
                             <div class="blog-box row">
                                 <div class="col-md-4">
                                     <div class="post-media">
-                                        <a href="single.html" title="">
+                                        <a href="{{ route('single_post', $post->id) }}" title="">
                                             <img src="{{ $post->img }}" alt="" class="img-fluid">
                                             <div class="hovereffect"></div>
                                         </a>
@@ -218,12 +242,13 @@
                                 </div><!-- end col -->
 
                                 <div class="blog-meta big-meta col-md-8">
-                                    <h4><a href="single.html" title="">{{ $post->title }}</a></h4>
+                                    <h4 style="border: 2px solid {{ $post->category->category_color }};"><a
+                                            href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a></h4>
                                     <p>{{ Str::limit(strip_tags($post->text), 160) }}</p>
                                     <a href="#">Read More </a> <br>
                                     <small><a href="blog-category-01.html"
                                             title="">{{ $post->category->title }}</a></small>
-                                    <small><a href="single.html"
+                                    <small><a href=""
                                             title="">{{ $post->created_at->format('d F, Y') }}</a></small>
                                     <small><a href="blog-author.html" title="">by Boby</a></small>
                                 </div><!-- end meta -->
@@ -242,34 +267,41 @@
                     <hr class="invis">
 
                     {{-- SECTION 5 START 3 POSTS ------------------------------------------------------------------------------------ --}}
+                    {{-- CATEGORY ID = 6 -> RECIPIES --}}
+                    @php
+                        $category_id_for_choice = 4;
+                    @endphp
                     <div class="blog-list clearfix">
-                        @foreach ($posts->skip(14)->take(3) as $post)
-                        <div class="section-title">
-                            <h3 class="color-red"><a href="blog-category-01.html" title="">{{ $post->category->title }}</a></h3>
-                        </div><!-- end title -->
+                        @foreach ($posts->where('cat_id', $category_id_for_choice)->take(3) as $post)
+                            <div class="section-title">
+                                <h3 class=""><a href="blog-category-01.html" title=""
+                                        style=" background-color: {{ $post->category->category_color }}">{{ $posts->where('cat_id', $category_id_for_choice)->first()->category->title }}</a>
+                                </h3>
+                            </div><!-- end title -->
 
-                        <div class="blog-box row">
-                            <div class="col-md-4">
-                                <div class="post-media">
-                                    <a href="single.html" title="">
-                                        <img src="{{ $post->img }}" alt=""
-                                            class="img-fluid">
-                                        <div class="hovereffect"></div>
-                                    </a>
-                                </div><!-- end media -->
-                            </div><!-- end col -->
+                            <div class="blog-box row">
+                                <div class="col-md-4">
+                                    <div class="post-media">
+                                        <a href="{{ route('single_post', $post->id) }}" title="">
+                                            <img src="{{ $post->img }}" alt="" class="img-fluid">
+                                            <div class="hovereffect"></div>
+                                        </a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
 
-                            <div class="blog-meta big-meta col-md-8">
-                                <h4><a href="single.html" title="">{{ $post->title }}</a>
-                                </h4>
-                                <p>{{ Str::limit(strip_tags($post->text), 160) }}</p>
+                                <div class="blog-meta big-meta col-md-8">
+                                    <h4 style="border: 2px solid {{ $post->category->category_color }};"><a
+                                            href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a>
+                                    </h4>
+                                    <p>{{ Str::limit(strip_tags($post->text), 160) }}</p>
                                     <a href="#">Read More </a> <br>
-                                <small><a href="blog-category-01.html" title="">{{ $post->category->title }}</a></small>
-                                <small><a href="single.html" title="">{{ $post->created_at->format('d F, Y') }}</a></small>
-                                <small><a href="blog-author.html" title="">by Matilda</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-
+                                    <small><a href="blog-category-01.html"
+                                            title="">{{ $post->category->title }}</a></small>
+                                    <small><a href=""
+                                            title="">{{ $post->created_at->format('d F, Y') }}</a></small>
+                                    <small><a href="blog-author.html" title="">by Matilda</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
                         @endforeach
                         <hr class="invis">
                         {{-- SECTION 5 END 3 POSTS ------------------------------------------------------------------------------------ --}}
@@ -278,62 +310,74 @@
                 </div><!-- end col -->
 
                 {{-- SECTION 6 START 3 POSTS ------------------------------------------------------------------------------------ --}}
+                {{-- CATEGORY ID = 6 -> NATURE --}}
+                    @php
+                        $category_id_for_choice = 6;
+                    @endphp
                 <div class="col-lg-3">
-                    @foreach ($posts->skip(17)->take(3) as $post)
-                    <div class="section-title">
-                        <h3 class="color-yellow"><a href="blog-category-01.html" title="">{{ $post->category->title }}</a></h3>
-                    </div><!-- end title -->
+                    @foreach ($posts->where('cat_id', 6)->take(3) as $post)
+                        <div class="section-title">
+                            <h3 class=""><a href="blog-category-01.html" title=""
+                                    style=" background-color: {{ $post->category->category_color }}">{{ $posts->where('cat_id', $category_id_for_choice)->first()->category->title }}</a>
+                            </h3>
+                        </div><!-- end title -->
 
-                    <div class="blog-box">
-                        <div class="post-media">
-                            <a href="single.html" title="">
-                                <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                <div class="hovereffect">
-                                    <span class="videohover"></span>
-                                </div><!-- end hover -->
-                            </a>
-                        </div><!-- end media -->
-                        <div class="blog-meta">
-                            <h4><a href="single.html" title="">{{ $post->title }}</a>
-                            </h4>
-                            <small><a href="blog-category-01.html" title="">{{ $post->category->title }}</a></small>
-                            <small><a href="blog-category-01.html" title="">{{ $post->created_at->format('d F, Y') }}</a></small>
-                        </div><!-- end meta -->
-                    </div><!-- end blog-box -->
-
+                        <div class="blog-box">
+                            <div class="post-media">
+                                <a href="{{ route('single_post', $post->id) }}" title="">
+                                    <img src="{{ $post->img }}" alt="" class="img-fluid">
+                                    <div class="hovereffect"></div><!-- end hover -->
+                                </a>
+                            </div><!-- end media -->
+                            <div class="blog-meta">
+                                <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a>
+                                </h4>
+                                <small><a href="blog-category-01.html"
+                                        title="">{{ $post->category->title }}</a></small>
+                                <small><a href=""
+                                        title="">{{ $post->created_at->format('d F, Y') }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end blog-box -->
                     @endforeach
                     <hr class="invis">
                     {{-- SECTION 6 END 3 POSTS ------------------------------------------------------------------------------------ --}}
 
                     {{-- SECTION 7 START 3 POSTS ------------------------------------------------------------------------------------ --}}
-                    @foreach ($posts->skip(20)->take(3) as $post)
-                    <div class="section-title">
-                        <h3 class="color-grey"><a href="blog-category-01.html" title="">{{ $post->category->title }}</a></h3>
-                    </div><!-- end title -->
+                    {{-- CATEGORY ID = 6 -> NATURE --}}
+                    @php
+                        $category_id_for_choice = 2;
+                    @endphp
+                    @foreach ($posts->where('cat_id', $category_id_for_choice)->take(3) as $post)
+                        <div class="section-title">
+                            <h3 class=""><a href="blog-category-01.html" title=""
+                                    style=" background-color: {{ $post->category->category_color }}">{{ $posts->where('cat_id', $category_id_for_choice)->first()->category->title }}</a>
+                            </h3>
+                        </div><!-- end title -->
 
-                    <div class="blog-box">
-                        <div class="post-media">
-                            <a href="single.html" title="">
-                                <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                <div class="hovereffect">
-                                    <span></span>
-                                </div><!-- end hover -->
-                            </a>
-                        </div><!-- end media -->
-                        <div class="blog-meta">
-                            <h4><a href="single.html" title="">{{ $post->title }}</a></h4>
-                            <small><a href="blog-category-01.html" title="">{{ $post->category->title }}</a></small>
-                            <small><a href="blog-category-01.html" title="">{{ $post->created_at->format('d F, Y') }}</a></small>
-                        </div><!-- end meta -->
-                    </div><!-- end blog-box -->
-
+                        <div class="blog-box">
+                            <div class="post-media">
+                                <a href="{{ route('single_post', $post->id) }}" title="">
+                                    <img src="{{ $post->img }}" alt="" class="img-fluid">
+                                    <div class="hovereffect">
+                                        <span></span>
+                                    </div><!-- end hover -->
+                                </a>
+                            </div><!-- end media -->
+                            <div class="blog-meta">
+                                <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a></h4>
+                                <small><a href="blog-category-01.html"
+                                        title="">{{ $post->category->title }}</a></small>
+                                <small><a href=""
+                                        title="">{{ $post->created_at->format('d F, Y') }}</a></small>
+                            </div><!-- end meta -->
+                        </div><!-- end blog-box -->
                     @endforeach
                     <hr class="invis">
 
                     {{-- SECTION 7 END 3 POSTS ------------------------------------------------------------------------------------ --}}
-                    
 
-                    
+
+
                 </div><!-- end col -->
             </div><!-- end row -->
 
@@ -343,7 +387,7 @@
                 <div class="col-lg-10 offset-lg-1">
                     <div class="banner-spot clearfix">
                         <div class="banner-img">
-                            <img src="/storage/banner_01.jpg" alt="" class="img-fluid">
+                            <img src="/storage/00066-green.gif" alt="" class="img-fluid">
                         </div><!-- end banner-img -->
                     </div><!-- end banner -->
                 </div><!-- end col -->

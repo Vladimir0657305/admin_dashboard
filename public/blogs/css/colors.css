@@ -61,6 +61,7 @@ a:focus,
 .navbar-nav .nav-link.color-pink-hover:hover,
 .navbar-nav .nav-link.color-pink-hover:focus {
     color: #deacca !important;
+    color: #FF0000 !important;
 }
 
 .page-title .bg-pink,
@@ -74,6 +75,7 @@ a:focus,
 .navbar-nav .nav-link.color-aqua-hover:hover,
 .navbar-nav .nav-link.color-aqua-hover:focus {
     color: #2ad2c9 !important;
+    color: #39BB3F !important;
 }
 
 .page-title .bg-aqua,
@@ -86,6 +88,7 @@ a:focus,
 .navbar-nav .nav-link.color-green-hover:hover,
 .navbar-nav .nav-link.color-green-hover:focus {
     color: #34bf49 !important;
+    color: #00FF00 !important;
 }
 
 .page-title .bg-green,
@@ -98,6 +101,7 @@ a:focus,
 .navbar-nav .nav-link.color-red-hover:hover,
 .navbar-nav .nav-link.color-red-hover:focus {
     color: #ed1b2e !important;
+    color: #B6FC14 !important;
 }
 
 .page-title .bg-red,
@@ -110,6 +114,7 @@ a:focus,
 .navbar-nav .nav-link.color-yellow-hover:hover,
 .navbar-nav .nav-link.color-yellow-hover:focus {
     color: #ffb900 !important;
+    color: #AE2F08 !important;
 }
 
 .page-title .bg-yellow,
@@ -122,6 +127,7 @@ a:focus,
 .navbar-nav .nav-link.color-grey-hover:hover,
 .navbar-nav .nav-link.color-grey-hover:focus {
     color: #6f1683 !important;
+    color: #DB135D !important;
 }
 
 .portfolio .blog-meta span.bg-grey,
