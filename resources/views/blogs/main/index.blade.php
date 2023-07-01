@@ -132,9 +132,9 @@
                                         <a href="{{ route('single_post', $post->id) }}" title="">
                                             {{-- <img src="/storage/business-blog-politic-news-image-2.jpg" alt=""class="img-fluid"> --}}
                                             <img src="{{ $post->img }}" alt=""class="img-fluid">
-                                            <div class="hovereffect">
+                                            {{-- <div class="hovereffect">
                                                 <span></span>
-                                            </div><!-- end hover -->
+                                            </div> --}}
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta big-meta">
@@ -178,9 +178,9 @@
                                     <div class="post-media">
                                         <a href="{{ route('single_post', $post->id) }}" title="">
                                             <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                            <div class="hovereffect">
+                                            {{-- <div class="hovereffect">
                                                 <span></span>
-                                            </div><!-- end hover -->
+                                            </div> --}}
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta">
@@ -236,7 +236,9 @@
                                     <div class="post-media">
                                         <a href="{{ route('single_post', $post->id) }}" title="">
                                             <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                            <div class="hovereffect"></div>
+                                            {{-- <div class="hovereffect">
+                                                <span></span>
+                                            </div> --}}
                                         </a>
                                     </div><!-- end media -->
                                 </div><!-- end col -->
@@ -284,7 +286,10 @@
                                     <div class="post-media">
                                         <a href="{{ route('single_post', $post->id) }}" title="">
                                             <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                            <div class="hovereffect"></div>
+                                            {{-- <div class="hovereffect">
+                                                <span></span>
+                                            </div> --}}
+                                            
                                         </a>
                                     </div><!-- end media -->
                                 </div><!-- end col -->
@@ -326,7 +331,10 @@
                             <div class="post-media">
                                 <a href="{{ route('single_post', $post->id) }}" title="">
                                     <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                    <div class="hovereffect"></div><!-- end hover -->
+                                    {{-- <div class="hovereffect">
+                                        <span></span>
+                                    </div> --}}
+                                    
                                 </a>
                             </div><!-- end media -->
                             <div class="blog-meta">
@@ -358,9 +366,9 @@
                             <div class="post-media">
                                 <a href="{{ route('single_post', $post->id) }}" title="">
                                     <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                    <div class="hovereffect">
+                                    {{-- <div class="hovereffect">
                                         <span></span>
-                                    </div><!-- end hover -->
+                                    </div> --}}
                                 </a>
                             </div><!-- end media -->
                             <div class="blog-meta">

@@ -38,16 +38,20 @@
                                         <div class="post-media">
                                             <a href="{{ route('single_post', $post->id) }}" title="">
                                                 <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div><!-- end hover -->
+                                                {{-- <div class="hovereffect">
+                                                    <span></span>
+                                                </div> --}}
                                             </a>
                                         </div><!-- end media -->
                                         <div class="blog-meta">
                                             <span class="bg-grey"><a href="blog-category-01.html"
                                                     title="">{{ $categories[$categoryId]->title }}</a></span>
-                                            <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a>
+                                            <h4><a href="{{ route('single_post', $post->id) }}"
+                                                    title="">{{ $post->title }}</a>
                                             </h4>
                                             <small><a href="blog-author.html" title="">By: Jessica</a></small>
-                                            <small><a href="{{ route('blog-category-05') }}" title="">{{ $post->created_at->format('d F, Y') }}</a></small>
+                                            <small><a href="{{ route('blog-category-05') }}"
+                                                    title="">{{ $post->created_at->format('d F, Y') }}</a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end blog-box -->
                                 </div><!-- end col -->
@@ -55,7 +59,7 @@
 
                         </div><!-- end portfolio -->
                     </div><!-- end page-wrapper -->
-                    
+
                     <hr class="invis">
 
                     <div class="row">

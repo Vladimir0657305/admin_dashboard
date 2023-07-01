@@ -50,14 +50,19 @@
                                             <div class="post-media">
                                                 <a href="{{ route('single_post', $post->id) }}" title="">
                                                     <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                                    <div class="hovereffect"></div>
+                                                    {{-- <div class="hovereffect">
+                                                        <span></span>
+                                                    </div> --}}
                                                 </a>
                                             </div><!-- end media -->
                                             <div class="blog-meta big-meta">
-                                                <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title }}</a></h4>
+                                                <h4><a href="{{ route('single_post', $post->id) }}"
+                                                        title="">{{ $post->title }}</a></h4>
                                                 <p>{{ Str::limit(strip_tags($post->text), 160) }}</p>
-                                                <small><a href="{{ route('blog-category-04') }}" title="">{{ $categories[$categoryId]->title }}</a></small>
-                                                <small><a href="" title="">{{ $post->created_at->format('d F, Y') }}</a></small>
+                                                <small><a href="{{ route('blog-category-04') }}"
+                                                        title="">{{ $categories[$categoryId]->title }}</a></small>
+                                                <small><a href=""
+                                                        title="">{{ $post->created_at->format('d F, Y') }}</a></small>
                                                 <small><a href="blog-author.html" title="">by Amanda</a></small>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->

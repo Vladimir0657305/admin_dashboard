@@ -1,5 +1,5 @@
 @extends('layouts.blog_layouts')
-@section('title', 'Посты категории дизайн')
+@section('title', 'Посты категории природа')
 
 @section('content_blog')
     @php
@@ -28,28 +28,31 @@
     <section class="section wb">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-wrapper">
-                        <div class="portfolio row">
 
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                    <div class="page-wrapper">
+
+                        <div class="portfolio row">
                             @foreach ($posts->where('cat_id', $categoryId + 1) as $post)
-                                <div class="pitem item-w1 item-h1">
-                                    <div class="blog-box">
-                                        <div class="post-media">
+                                <div class="pitem item-w1 item-h1" style="width: calc(100% / 3); height:auto;">
+                                    <div class="blog-box " >
+                                        <div class="post-media d-inline" >
                                             <a href="{{ route('single_post', $post->id) }}" title="">
-                                                <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                                <div class="hovereffect">
+                                                <img src="{{ $post->img }}" alt="" class="img-fluid" >
+                                                {{-- <div class="hovereffect">
                                                     <span></span>
-                                                </div><!-- end hover -->
+                                                </div> --}}
                                             </a>
                                         </div><!-- end media -->
                                         <div class="blog-meta">
-                                            <span class="bg-grey"><a href="{{ route('blog-category-06') }}"
-                                                    title="">Spa</a></span>
-                                            <h4><a href="{{ route('single_post', $post->id) }}" title="">{{ $post->title}}</a>
-                                            </h4>
+                                            <span class="bg-grey"><a href="{{ route('blog-category-06') }}" title=""
+                                                    style=" background-color:{{ $categories[$categoryId]->category_color }}">{{ $categories[$categoryId]->title }}</a></span>
+                                            <h4><a href="{{ route('single_post', $post->id) }}"
+                                                    title="">{{ $post->title }}</a></h4>
                                             <small><a href="blog-author.html" title="">By: Jessica</a></small>
-                                            <small><a href="{{ route('blog-category-06') }}" title="">21 July, 2017</a></small>
+                                            <small><a href="blog-category-01.html"
+                                                    title="">{{ $post->created_at->format('d F, Y') }}</a></small>
                                         </div><!-- end meta -->
                                     </div><!-- end blog-box -->
                                 </div><!-- end col -->
@@ -57,21 +60,24 @@
 
 
                         </div><!-- end portfolio -->
+
                     </div><!-- end page-wrapper -->
 
-                    <hr class="invis">
+                </div><!-- end page-wrapper -->
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination justify-content-start">
-                                    {{ $posts->links() }}
-                                </ul>
-                            </nav>
-                        </div><!-- end col -->
-                    </div><!-- end row -->
-                </div><!-- end col -->
-            </div><!-- end row -->
+                <hr class="invis">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-start">
+                                {{ $posts->links() }}
+                            </ul>
+                        </nav>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end col -->
+        </div><!-- end row -->
         </div><!-- end container -->
     </section>
 @endsection

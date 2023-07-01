@@ -56,8 +56,9 @@
                                         <div class="post-media">
                                             <a href="{{ route('single_post', $post->id) }}">
                                                 <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                                <div class="hovereffect">
-                                                </div><!-- end hover -->
+                                                {{-- <div class="hovereffect">
+                                                    <span></span>
+                                                </div> --}}
                                             </a>
                                         </div><!-- end media -->
                                         <div class="blog-meta">

@@ -14,8 +14,9 @@
                             style=" background-color:{{ $categories[$categoryId]->category_color }}"></i>
                         {{ $categories[$categoryId]->title }} <small class="hidden-xs-down hidden-sm-down">
                             <p class="mt-1">Бывает соберешься
-                            с подружками на кухне, шампусик там, салатик, кулинарными рецептам опять же поделиться. А
-                            кто-то непременно заявит: «У них Шабаш!» </p></small></h2>
+                                с подружками на кухне, шампусик там, салатик, кулинарными рецептам опять же поделиться. А
+                                кто-то непременно заявит: «У них Шабаш!» </p>
+                        </small></h2>
                 </div><!-- end col -->
                 <div class="col-lg-4 col-md-4 col-sm-$categoryId2 hidden-xs-down hidden-sm-down">
                     <ol class="breadcrumb">
@@ -41,7 +42,9 @@
                                         <div class="post-media">
                                             <a href="{{ route('single_post', $post->id) }}" title="">
                                                 <img src="{{ $post->img }}" alt="" class="img-fluid">
-                                                <div class="hovereffect"></div>
+                                                {{-- <div class="hovereffect">
+                                                    <span></span>
+                                                </div> --}}
                                             </a>
                                         </div><!-- end media -->
                                     </div><!-- end col -->

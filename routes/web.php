@@ -25,10 +25,6 @@ Auth::routes();
 Route::get('/home', function() {
     return view('home');
 })->name('home');
-// Route::get('/', function() {
-//     return view('blogs.main.index');
-// })->name('main');
-
 
 Route::get('/single_post/{postId}', [BlogsController::class, 'singlePost'])->name('single_post');
 Route::get('/blog-category-01', [BlogsController::class, 'blog_category_01'])->name('blog-category-01');

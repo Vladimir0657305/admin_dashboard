@@ -13,7 +13,7 @@
     <h2 class="widget-title">Recent Posts</h2>
     <div class="blog-list-widget">
         <div class="list-group">
-            @foreach ($posts->take(3) as $post)
+            @foreach ($posts_new->take(3) as $post)
                 <a href="{{ route('single_post', $post->id) }}"
                     class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="w-100 justify-content-between">
@@ -46,7 +46,7 @@
     <div class="link-widget">
         <ul>
             @foreach ($categories_count as $category_count)
-                <li><a href="#">{{ $category_count->title }}
+                <li><a href="{{ route('blog-category-0' . $category_count->id) }}">{{ $category_count->title }}
                         <span>({{ $category_count->posts_count }})</span></a></li>
             @endforeach
         </ul>
