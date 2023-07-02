@@ -139,7 +139,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="logo">
-                            <a href="index.html"><img src="/blogs/images/logo.png" alt=""></a>
+                            <a href="index.html"><img src="/storage/logo.png" alt=""></a>
                         </div><!-- end logo -->
                     </div>
                 </div><!-- end row -->
@@ -470,7 +470,7 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="widget">
                         <div class="footer-text text-center">
-                            <a href="index.html"><img src="/blogs/images/flogo.png" alt=""
+                            <a href="index.html"><img src="/storage/logo.png" alt=""
                                     class="img-fluid"></a>
                             <p>Cloapedia is a personal blog for handcrafted, cameramade photography content, fashion
                                 styles from independent creatives around the world.</p>

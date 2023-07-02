@@ -70,7 +70,7 @@ class BlogsController extends Controller
     {
         Paginator::useBootstrapFour();
         $categories = Category::get();
-        $posts = Post::where('cat_id', 4)->orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::where('cat_id', 4)->orderBy('created_at', 'desc')->paginate(6);
         $posts_new = Post::orderBy('created_at', 'desc')->get();
         $categories_count = Category::withCount('posts')->get();
 
