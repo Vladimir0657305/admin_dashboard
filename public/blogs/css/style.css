@@ -1678,3 +1678,10 @@ hr.invis3 {
     -o-border-radius: 50%;
     border-radius: 50%
 }
+
+.custom_btn_logout:focus {
+    outline: none;
+}
+.custom_btn_logout:active {
+    outline: none;
+}
