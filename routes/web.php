@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\MainAdminController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\BlogsController;
 
 /*
@@ -21,7 +22,7 @@ use App\Http\Controllers\BlogsController;
 
 Auth::routes();
 
-Route::get('/home', function() {
+Route::get('/home', function () {
     return view('home');
 })->name('home');
 
@@ -35,8 +36,12 @@ Route::get('/blog-category-06', [BlogsController::class, 'blog_category_06'])->n
 Route::get('/page-contact', [BlogsController::class, 'page_contact'])->name('page-contact');
 Route::get('/', [BlogsController::class, 'main'])->name('main');
 
-Route::middleware(['role:admin'])->prefix('admin_panel')->group( function() {
+Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::get('/', [MainAdminController::class, 'index'])->name('home_admin');
     Route::resource('category', CategoryController::class);
     Route::resource('post', PostController::class);
+    Route::get('/users', [UsersController::class, 'index'])->name('users');
+    Route::get('/users-edit', [UsersController::class, 'edit'])->name('users-edit');
+    Route::get('/users-edit/{userId}', [UsersController::class, 'edit'])->name('users-edit');
+    Route::get('/users-update', [UsersController::class, 'users_update'])->name('users-update');
 });

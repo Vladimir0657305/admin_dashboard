@@ -40,7 +40,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="small-box-footer w-100">Все посты <i
+                        <a href="{{ route('post.index') }}" class="small-box-footer w-100">Все посты <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="small-box-footer w-100">Все категории <i
+                        <a href="{{ route('category.index') }}" class="small-box-footer w-100">Все категории <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     <div class="small-box bg-info d-flex flex-column  justify-content-between">
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="inner ml-2 ">
-                                <h3>4</h3>
+                                <h3>{{Auth::user()->count()}}</h3>
                                 <p>Пользователи</p>
                             </div>
                             <div class="text-center ">
@@ -78,7 +78,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="small-box-footer w-100">Все пользователи <i
+                        <a href="{{ route('users') }}" class="small-box-footer w-100">Все пользователи <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>

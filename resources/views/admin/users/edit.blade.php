@@ -1,5 +1,5 @@
 @extends('layouts.admin_layouts')
-@section('title', 'Редактировать статью')
+@section('title', 'Редактировать пользователя')
 
 @section('content')
     <!-- [ Main Content ] start -->
@@ -11,14 +11,14 @@
                     <div class="row align-items-center">
                         <div class="col-md-12 d-flex justify-content-between">
                             <div class="page-header-title">
-                                <h5 class="m-b-10">Панель администратора: редактировать статью</h5>
+                                <h5 class="m-b-10">Панель администратора: редактировать пользователя</h5>
                             </div>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ route('home_admin') }}"><b><i
                                                 class="feather icon-home"></i></b></a></li>
                                 <li class="breadcrumb-item"><a href="{{ route('home_admin') }}"><b>Dashboard
                                             Analytics</b></a></li>
-                                <li class="breadcrumb-item">Редактировать статью</li>
+                                <li class="breadcrumb-item">Редактировать пользователя</li>
                             </ul>
                         </div>
                     </div>
@@ -36,42 +36,38 @@
             @endif
             {{-- Success output end --}}
 
-            {{-- Form input category name start --}}
+            {{-- Form input name start --}}
             <div class="card card-primary">
-                <form action="{{ route('post.update', $post->id) }}" method="POST">
+                <form action="{{ route('users-update', $edit_user) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="edit_post">Введите название</label>
-                            <input type="text" class="form-control" name="title" id="edit_post"
-                                value="{{ $post->title }}" required>
+                            <label for="name_edit">Введите имя</label>
+                            <input type="text" class="form-control" name="name_edit" id="name_edit"
+                                value="{{ $edit_user->name }}" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Выберите категорию</label>
-                            <select class="form-control" name="cat_id" id="exampleFormControlSelect1" required>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}"
-                                        @if($category->id == $post->cat_id) selected
-                                        @endif>
-                                        {{ $category->title }}</option>
+                            <label for="email_edit">Введите электронную почту'</label>
+                            <input type="email" class="form-control" name="email_edit" id="email_edit"
+                                value="{{ $edit_user->email }}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status_edit">Выберите статус</label>
+
+                            <div class=" custom-radio">
+                                @foreach ($roles as $role)
+                                <div class="custom_form_div">
+                                    <input type="radio" class="input_custom" id="customControl{{ $role->id }}"
+                                        name="radio-stacked" value="{{ $role->id }}"
+                                        @if ($edit_user->roles->contains('id', $role->id)) checked @endif>
+                                    <label class="label_custom" for="customControl{{ $role->id }}">{{ $role->name }}</label>
+                                    <br>
+                                </div>
                                 @endforeach
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea id ="editor" name="text">
-                                {{ $post->text }}
-                            </textarea>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="feature_image">Выберите изображение</label>
-                            <img src="{{ $post->img }}" class="img-uploaded" alt="" style="display:block; width: 300px;">
-                            <input type="text" class="form-control " id="feature_image" name="feature_image" value="{{ $post->img }}">
-                            <button href="" class="popup_selector btn btn-primary mt-2" data-inputid="feature_image"> Select Image </button>
+                            </div>
                         </div>
 
                     </div>
