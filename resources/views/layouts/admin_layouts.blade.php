@@ -21,6 +21,7 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="/admin/dist/assets/css/style.css">
+    <link rel="stylesheet" href="/admin/dist/assets/css/login-style.css">
     <link rel="stylesheet" href="/admin/dist/assets/css/colorbox.css">
 
 </head>

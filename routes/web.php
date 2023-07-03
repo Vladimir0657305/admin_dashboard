@@ -32,6 +32,7 @@ Route::get('/blog-category-03', [BlogsController::class, 'blog_category_03'])->n
 Route::get('/blog-category-04', [BlogsController::class, 'blog_category_04'])->name('blog-category-04');
 Route::get('/blog-category-05', [BlogsController::class, 'blog_category_05'])->name('blog-category-05');
 Route::get('/blog-category-06', [BlogsController::class, 'blog_category_06'])->name('blog-category-06');
+Route::get('/page-contact', [BlogsController::class, 'page_contact'])->name('page-contact');
 Route::get('/', [BlogsController::class, 'main'])->name('main');
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group( function() {

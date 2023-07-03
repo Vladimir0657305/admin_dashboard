@@ -138,4 +138,16 @@ class BlogsController extends Controller
             'category' => $category
         ]);
     }
+    public function page_contact()
+    {
+        $posts = Post::all();
+        $categories_count = Category::withCount('posts')->get();
+        $posts_new = Post::orderBy('created_at', 'desc')->get();
+
+        return view('blogs.page-contact', [
+            'posts' => $posts,
+            'posts_new' => $posts_new,
+            'categories_count' => $categories_count
+        ]);
+    }
 }
