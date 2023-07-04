@@ -69,7 +69,12 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-        $user->assignRole('user');
+        // $user->assignRole('user');
+        $user->roles()->attach(1, ['model_type' => 'App\Models\User']);
         return $user;
+    }
+    protected function redirectPath()
+    {
+        return '/';
     }
 }

@@ -30,14 +30,29 @@ class UsersController extends Controller
             'roles' => $roles
         ]);
     }
+    
 
     public function users_update(Request $request, User $user)
     {
         $user->id = $request->id;
-        $user->name = $request->name;
-        $user->email = $request->email;
+        if (isset($request->name)) {
+            $user->name = $request->name;
+        } else {
+            $user->name = '';
+        }
+        if (isset($request->email)) {
+            $user->email = $request->email;
+        } else {
+            $user->email = '';
+        }
+        $user->password = '';
         $user->roles()->sync($request->roles);
         $user->save();
         return redirect()->back()->withSuccess('Пользователь успешно обновлен!');
+    }
+public function destroy(User $user)
+    {
+        $user -> delete();
+        return redirect()->back()->withSuccess('Пользователь успешно удален!');
     }
 }

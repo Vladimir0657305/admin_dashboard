@@ -83,9 +83,11 @@
                     <div class="col-lg-4 hidden-md-down">
                         <div class="topmenu text-center">
                             <ul class="list-inline">
-                                <li class="list-inline-item"><a href="{{ route('blog-category-01') }}"><i class="fa fa-star"></i>
+                                <li class="list-inline-item"><a href="{{ route('blog-category-01') }}"><i
+                                            class="fa fa-star"></i>
                                         Trends</a></li>
-                                <li class="list-inline-item"><a href="{{ route('blog-category-01') }}"><i class="fa fa-bolt"></i>
+                                <li class="list-inline-item"><a href="{{ route('blog-category-01') }}"><i
+                                            class="fa fa-bolt"></i>
                                         Hot Topics</a></li>
                                 <li class="list-inline-item"><a href="{{ route('page-contact') }}"><i
                                             class="fa fa-user-circle-o"></i> Write for us</a></li>
@@ -334,59 +336,6 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown has-submenu">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown02"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                                    <li><a class="dropdown-item" href="single.html">Single Blog <span
-                                                class="hidden-md-down hidden-sm-down hidden-xs-down"><i
-                                                    class="fa fa-angle-right"></i></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="single.html">Single Default</a></li>
-                                            <li><a class="dropdown-item" href="single-fullwidth.html">Single
-                                                    Fullwidth</a></li>
-                                            <li><a class="dropdown-item" href="single-slider.html">Single Gallery</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="single-video.html">Single Video</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="single-audio.html">Single Audio</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="single-no-media.html">Single No
-                                                    Media</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="dropdown-item" href="single.html">Blog Category <span
-                                                class="hidden-md-down hidden-sm-down hidden-xs-down"><i
-                                                    class="fa fa-angle-right"></i></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="{{ route('blog-category-01') }}">Blog
-                                                    Category
-                                                    A</a></li>
-                                            <li><a class="dropdown-item" href="{{ route('blog-category-02') }}">Blog
-                                                    Category
-                                                    B</a></li>
-                                            <li><a class="dropdown-item" href="{{ route('blog-category-03') }}">Blog
-                                                    Category
-                                                    C</a></li>
-                                            <li><a class="dropdown-item" href="{{ route('blog-category-04') }}">Blog
-                                                    Category
-                                                    D</a></li>
-                                            <li><a class="dropdown-item" href="{{ route('blog-category-05') }}">Blog
-                                                    Category
-                                                    E</a></li>
-                                            <li><a class="dropdown-item" href="{{ route('blog-category-06') }}">Blog
-                                                    Category
-                                                    F</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="dropdown-item" href="blog-author.html">Blog Author</a></li>
-                                    <li><a class="dropdown-item" href="page-contact.html">Contact Page</a></li>
-                                    <li><a class="dropdown-item" href="page.html">Default Page</a></li>
-                                    <li><a class="dropdown-item" href="page-fullwidth.html">Fullwidth Page</a></li>
-                                    <li><a class="dropdown-item" href="page-404.html">Not Found Page</a></li>
-                                    <li><a class="dropdown-item" href="page-sitemap.html">Sitemap & Archives</a></li>
-                                </ul>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link color-pink-hover"
                                     href="{{ route('blog-category-01') }}">Новости</a>
@@ -543,7 +492,7 @@
                     <div class="col-md-12 text-center">
                         <br>
                         <p>Made with <span id="heart"><img id="Layer_1" src="/storage/red-heart.png">
-                    </span> | Go Blog ©2023 </p>
+                            </span> | Go Blog ©2023 </p>
                     </div>
                 </div>
             </div><!-- end container -->

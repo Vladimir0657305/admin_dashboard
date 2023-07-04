@@ -66,12 +66,12 @@
                                                     @php
                                                         $userId = $user->id
                                                     @endphp
-                                                    <a class="btn btn-info btn-sm mr-1" href="{{ route('users-edit', $userId) }}">
+                                                    {{-- <a class="btn btn-info btn-sm mr-1" href="{{ route('users-edit', $userId) }}">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
                                                         Редактировать
-                                                    </a>
-                                                    <form action="#" method="POST" class="d-inline">
+                                                    </a> --}}
+                                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-inline">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm delete-btn"

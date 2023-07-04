@@ -43,5 +43,6 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::get('/users', [UsersController::class, 'index'])->name('users');
     Route::get('/users-edit', [UsersController::class, 'edit'])->name('users-edit');
     Route::get('/users-edit/{userId}', [UsersController::class, 'edit'])->name('users-edit');
-    Route::get('/users-update', [UsersController::class, 'users_update'])->name('users-update');
+    Route::put('/users-update', [UsersController::class, 'users_update'])->name('users-update');
+    Route::delete('/users-delete/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
 });
