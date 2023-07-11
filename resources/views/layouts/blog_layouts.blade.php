@@ -194,7 +194,7 @@
                                             <div class="tab-details clearfix">
                                                 <div id="cat01" class="tabcontent active">
                                                     <div class="row">
-                                                        @foreach ($posts->where('cat_id', 1)->take(4) as $post)
+                                                        @foreach ($posts_new->where('cat_id', 1)->take(4) as $post)
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
                                                                     <div class="post-media">
@@ -221,7 +221,7 @@
 
                                                 <div id="cat02" class="tabcontent">
                                                     <div class="row">
-                                                        @foreach ($posts->where('cat_id', 3)->take(4) as $post)
+                                                        @foreach ($posts_new->where('cat_id', 3)->take(4) as $post)
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
                                                                     <div class="post-media">
@@ -249,7 +249,7 @@
                                                 </div>
                                                 <div id="cat03" class="tabcontent">
                                                     <div class="row">
-                                                        @foreach ($posts->where('cat_id', 6)->take(4) as $post)
+                                                        @foreach ($posts_new->where('cat_id', 6)->take(4) as $post)
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
                                                                     <div class="post-media">
@@ -277,7 +277,7 @@
                                                 </div>
                                                 <div id="cat04" class="tabcontent">
                                                     <div class="row">
-                                                        @foreach ($posts->where('cat_id', 5)->take(4) as $post)
+                                                        @foreach ($posts_new->where('cat_id', 5)->take(4) as $post)
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
                                                                     <div class="post-media">
@@ -305,7 +305,7 @@
                                                 </div>
                                                 <div id="cat05" class="tabcontent">
                                                     <div class="row">
-                                                        @foreach ($posts->where('cat_id', 2)->take(4) as $post)
+                                                        @foreach ($posts_new->where('cat_id', 2)->take(4) as $post)
                                                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                                                                 <div class="blog-box">
                                                                     <div class="post-media">
@@ -391,7 +391,7 @@
                             <h2 class="widget-title">Recent Posts</h2>
                             <div class="blog-list-widget">
                                 <div class="list-group">
-                                    @foreach ($posts->take(3) as $post)
+                                    @foreach ($posts_new->take(3) as $post)
                                         <a href="{{ route('single_post', $post->id) }}"
                                             class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
@@ -413,7 +413,7 @@
                             <div class="blog-list-widget">
                                 <div class="list-group">
 
-                                    @foreach ($posts->skip(3)->take(3) as $post)
+                                    @foreach ($posts->take(3) as $post)
                                         <a href="{{ route('single_post', $post->id) }}"
                                             class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
